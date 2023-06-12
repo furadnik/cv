@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Curriculum Vitae
+% LaTeX Template
+% Version 1.1 (September 10, 2021)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Stefano (https://www.kindoblue.nl)
+% Vel (vel@LaTeXTemplates.com)
+% 
+% Edited by:
+% Filip Úradník (filip.uradnik9@gmail.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% fix characters in hyperref.
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{naturalnames}{hyperref}
+
+\documentclass[a4paper, oneside, final]{scrartcl} % Paper options using the scrartcl class
+
+\usepackage[czech]{babel}
+
+% handle fonts encoding.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{scrlayer-scrpage} % Provides headers and footers configuration
+\usepackage{titlesec} % Allows creating custom \section's
+\usepackage{marvosym} % Allows the use of symbols
+\usepackage{tabularx,colortbl} % Advanced table configurations
+\usepackage{ebgaramond} % Use the EB Garamond font
+\usepackage{microtype} % To enable letterspacing
+
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Section formatting
+
+\addtolength{\voffset}{-0.5in} % Adjust the vertical offset - less whitespace at the top of the page
+\addtolength{\textheight}{3cm} % Adjust the text height - less whitespace at the bottom of the page
+
+\newcommand{\gray}{\rowcolor[gray]{.90}} % Custom highlighting for the work experience and education sections
+\newcommand{\splitspace}{3.39cm}
+
+\usepackage[pdfusetitle]{hyperref}
+\hypersetup{
+    colorlinks=false
+}
+
+\begin{document}
+
+\begin{center} % Center everything in the document
+
+%----------------------------------------------------------------------------------------
+%	HEADER SECTION
+%----------------------------------------------------------------------------------------
+
+{\fontsize{36}{36}\selectfont\scshape\textls[200]{Filip Úradník}} % Your name at the top
+
+\vspace{1.5cm} % Extra whitespace after the large name at the top
+
+%----------------------------------------------------------------------------------------
+%	KONTAKT
+%----------------------------------------------------------------------------------------
+
+\section{Kontakt}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+Web & \href{https://www.ms.mff.cuni.cz/~uradnikf}{www.ms.mff.cuni.cz/\textasciitilde{}uradnikf}\\
+Email & \href{mailto:filip.uradnik9@gmail.com}{filip.uradnik9@gmail.com}\\
+Github & \href{https://github.com/furadnik}{furadnik}\\
+LinkedIn & \href{https://www.linkedin.com/in/furadnik/}{furadnik}\\
+Matrix & \href{https://matrix.to/\#/@furadnik:matrix.org}{@furadnik:matrix.org}\\
+Telegram & \href{https://t.me/furadnik}{furadnik}\\
+Messenger & \href{https://m.me/filip.uradnik9}{filip.uradnik9}\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Pracovní zkušenosti}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+Zaměstnavatel & \textbf{CZ.NIC} \hfill Praha\\
+Období & červenec 2022 --- současnost\\
+Pozice & Software Developer\\
+Náplň práce & Vývoj command-line interface pro komunikaci přes EPP se systémem FRED.
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Vzdělání}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+Škola & \textbf{Univerzita Karlova} \\
+Fakulta & Matematicko-fyzikální, informatická sekce \\
+Druh studia & bakalářské, zameření obecná informatika \\
+Období & 2021 --- současnost \\ 
+\end{tabularx}
+
+\vspace{15pt}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+Škola & \textbf{Gymnázium Mimoň} \\
+Druh studia & středoškolské s maturitou \\
+Období & 2013 --- 2021 \\ 
+Maturitní zkouška & Český jazyk, Anglický jazyk \\
+        & Matematika, Informatika \\
+        & Matematika rozšiřující
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%   OUT OF SCHOOL ACTIVITIES
+%----------------------------------------------------------------------------------------
+
+\section{Další aktivita}
+
+\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+2020 --- 2021 & Pomáhal jsem vytvořit nové školní stránky \href{https://gymi.cz}{Gymnázia Mimoň}. \\
+2022 --- & Spoluorganizuji programátorskou soutěž \href{https://kasiopea.matfyz.cz}{Kasiopea}. \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\pagebreak
+
+\section{Dovednosti}
+
+\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+Python          & ABC, type-hints, dataclasses, Protocols  \\
+                & functools, itertools, generators \\
+                & pygments, pydantic, prompt toolkit \\
+C++             & CMake, C++17, C++20, Catch2 \\
+Web             & HTML, JavaScript, CSS, Django \\
+Další jazyky    & \LaTeX, Lua, Vimscript, Prolog \\
+\end{tabularx}
+
+\vspace{15pt}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+Linux   & Arch, Debian, Raspbian, Ubuntu \\
+        & Bash, Zsh \\
+        & i3 \\
+IDEs    & Neovim: Treesitter, LSP, Telescope \\
+        & Vim, VS Code, Visual Studio \\
+VCS     & Git, GitLab, GitHub \\
+\end{tabularx}
+
+\vspace{15pt}
+
+\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+Jazyky          & Český jazyk \\
+                & Anglický jazyk -- B2 \\
+                & Německý jazyk -- A2 \\
+Řidičský průkaz & Skupina B \\
+\end{tabularx}
+
+\end{center}
+\end{document}
