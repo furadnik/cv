@@ -25,4 +25,8 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: false
           title: "Automatic Release"
-          files: uradnik_cv.pdf uradnik_cv_cz.pdf uradnik_cv_en.pdf
+          files: |
+            uradnik_cv.pdf
+            uradnik_cv_en.pdf
+            uradnik_cv_cz.pdf
+
