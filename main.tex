@@ -22,9 +22,8 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{naturalnames}{hyperref}
 
-\documentclass[a4paper, oneside, final]{scrartcl} % Paper options using the scrartcl class
-
-\usepackage[czech]{babel}
+\usepackage{babel}
+\usepackage{iflang}
 
 % handle fonts encoding.
 \usepackage[utf8]{inputenc}
@@ -50,6 +49,30 @@
     colorlinks=false
 }
 
+\babeltags{en=english, cz=czech}
+
+\newcommand{\Praha}{\IfLanguageName{czech}{Praha}{Prague}}
+\newcommand{\Present}{\IfLanguageName{czech}{současnost}{present}}
+\newcommand{\CharlesUni}{\IfLanguageName{czech}{Univerzita Karlova}{Charles University}}
+\newcommand{\MFF}{\IfLanguageName{czech}{Matematicko-fyzikální fakulta}{Faculty of Mathematics and Physics}}
+\newcommand{\MFFCS}{\IfLanguageName{czech}{Informatická sekce}{School of Computer Science}}
+
+\newenvironment{work}[5]
+	{\tabularx{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+	\IfLanguageName{czech}{Zaměstnavatel}{Employer} & \textbf{#1} \hfill #2 \\
+	\IfLanguageName{czech}{Období}{Period}          & #3 --- #4             \\
+	\IfLanguageName{czech}{Pozice}{Position}        & #5                    \\
+	\IfLanguageName{czech}{Náplň práce}{Work} &}
+	{ \endtabularx }
+
+\newcommand{\school}[4]{
+	\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
+	\IfLanguageName{czech}{Škola}{School}       & \textbf{#1} \\
+	\if \relax\detokenize{#2}\relax\else \IfLanguageName{czech}{Fakulta}{Faculty} & #2 \\ \fi
+	\IfLanguageName{czech}{Druh studia}{Type of study} & #3          \\
+	\IfLanguageName{czech}{Období}{Period}      & #4                 \\
+	\end{tabularx}}
+
 \begin{document}
 
 \begin{center} % Center everything in the document
@@ -66,63 +89,60 @@
 	%	KONTAKT
 	%----------------------------------------------------------------------------------------
 
-	\section{Kontakt}
+	\section{\IfLanguageName{czech}{Kontakt}{Contact}}
 
 	\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-		Web       & \href{https://www.ms.mff.cuni.cz/~uradnikf}{www.ms.mff.cuni.cz/\textasciitilde{}uradnikf} \\
-		Email     & \href{mailto:filip.uradnik@mff.cuni.cz}{filip.uradnik@mff.cuni.cz}                        \\
-		Github    & \href{https://github.com/furadnik}{furadnik}                                              \\
-		LinkedIn  & \href{https://www.linkedin.com/in/furadnik/}{furadnik}                                    \\
-		Matrix    & \href{https://matrix.to/\#/@furadnik:matrix.org}{@furadnik:matrix.org}                    \\
-		Messenger & \href{https://m.me/filip.uradnik9}{filip.uradnik9}                                        \\
+		Web       & \href{https://www.ms.mff.cuni.cz/~uradnikf}{www.ms.mff.cuni.cz/\textasciitilde{}uradnikf}                         \\
+		Email     & \href{mailto:filip.uradnik9@gmail.com}{filip.uradnik9@gmail.com} \hfill(\IfLanguageName{czech}{osobní}{personal}) \\
+		          & \href{mailto:filip.uradnik@mff.cuni.cz}{filip.uradnik@mff.cuni.cz}\hfill (\IfLanguageName{czech}{školní}{school}) \\
+		          & \href{mailto:filip.uradnik@nic.cz}{filip.uradnik@nic.cz} \hfill(CZ.NIC)                                           \\
+		Github    & \href{https://github.com/furadnik}{furadnik}                                                                      \\
+		LinkedIn  & \href{https://www.linkedin.com/in/furadnik/}{furadnik}                                                            \\
+		Matrix    & \href{https://matrix.to/\#/@furadnik:matrix.org}{@furadnik:matrix.org}                                            \\
+		Messenger & \href{https://m.me/filip.uradnik9}{filip.uradnik9}                                                                \\
 	\end{tabularx}
 
 	%----------------------------------------------------------------------------------------
 	%	WORK EXPERIENCE
 	%----------------------------------------------------------------------------------------
 
-	\section{Pracovní zkušenosti}
+	\section{\IfLanguageName{czech}{Pracovní zkušenosti}{Work Experience}}
 
-	\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-		Zaměstnavatel & \textbf{CZ.NIC} \hfill Praha                                           \\
-		Období        & červenec 2022 --- současnost                                           \\
-		Pozice        & Software Developer                                                     \\
-		Náplň práce   & Vývoj command-line interface pro komunikaci přes EPP se systémem FRED.
-	\end{tabularx}
+	\begin{work}{CZ.NIC}{\Praha{}}{\IfLanguageName{czech}{červenec}{July} 2022}{\Present{}}{Software Developer}
+		\IfLanguageName{czech}{Vývoj command-line interface pro komunikaci přes EPP se systémem FRED.}{Development of a command-line interface for communication over EPP with the FRED system.}
+
+		\IfLanguageName{czech}{Dostupné přes systém}{Available at} \href{https://gitlab.nic.cz/fred/eppic}{GitLab}.
+	\end{work}
 
 	%----------------------------------------------------------------------------------------
 	%	EDUCATION
 	%----------------------------------------------------------------------------------------
 
-	\section{Vzdělání}
+	\section{\IfLanguageName{czech}{Vzdělání}{Education}}
 
-	\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-		Škola       & \textbf{Univerzita Karlova}               \\
-		Fakulta     & Matematicko-fyzikální, informatická sekce \\
-		Druh studia & bakalářské, zameření obecná informatika   \\
-		Období      & 2021 --- současnost                       \\
-	\end{tabularx}
+	\school{\CharlesUni{}}{\MFF{}, \MFFCS{}}
+	{\IfLanguageName{czech}{bakalářské, zameření obecná informatika}{bachelor, general Computer Science}}{2021 -- \Present{}}
 
 	\vspace{15pt}
 
-	\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-		Škola             & \textbf{Gymnázium Mimoň}    \\
-		Druh studia       & středoškolské s maturitou   \\
-		Období            & 2013 --- 2021               \\
-		Maturitní zkouška & Český jazyk, Anglický jazyk \\
-		                  & Matematika, Informatika     \\
-		                  & Matematika rozšiřující
-	\end{tabularx}
+	\school{Gymnázium Mimoň}{}
+	{\IfLanguageName{czech}{středoškolské s maturitou}{secondary school with maturita}}{2013 -- 2021 \\
+		\IfLanguageName{czech}{Maturitní zkouška}{Maturita exam} & Český jazyk, Anglický jazyk \\
+		& Matematika, Informatika     \\
+		& Matematika rozšiřující
+	}
 
 	%----------------------------------------------------------------------------------------
 	%   OUT OF SCHOOL ACTIVITIES
 	%----------------------------------------------------------------------------------------
 
-	\section{Další aktivita}
+	\section{\IfLanguageName{czech}{Další aktivita}{Other activities}}
 
 	\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-		2020 --- 2021 & Pomáhal jsem vytvořit nové školní stránky \href{https://gymi.cz}{Gymnázia Mimoň}.   \\
-		2022 ---      & Spoluorganizuji programátorskou soutěž \href{https://kasiopea.matfyz.cz}{Kasiopea}. \\
+		2020 --- 2021 & \IfLanguageName{czech}{Pomáhal jsem vytvořit nové školní stránky \href{https://gymi.cz}{Gymnázia Mimoň}.}
+		{I helped to create a new website for \href{https://gymi.cz}{Gymnázium Mimoň}.}                                             \\
+		2022 ---      & \IfLanguageName{czech}{Spoluorganizuji programátorskou soutěž \href{https://kasiopea.matfyz.cz}{Kasiopea}.}
+		{I co-organize the \href{https://kasiopea.matfyz.cz}{Kasiopea} programming competition.}                                    \\
 	\end{tabularx}
 
 	%----------------------------------------------------------------------------------------
@@ -131,15 +151,16 @@
 
 	\pagebreak
 
-	\section{Dovednosti}
+	\section{\IfLanguageName{czech}{Dovednosti}{Skills}}
 
 	\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-		Python       & ABC, type-hints, dataclasses, Protocols \\
-		             & functools, itertools, generators        \\
-		             & pygments, pydantic, prompt toolkit      \\
-		C++          & CMake, C++17, C++20, Catch2             \\
-		Web          & HTML, JavaScript, CSS, Django           \\
-		Další jazyky & \LaTeX, Lua, Vimscript, Prolog          \\
+		Python                                                & ABC, type-hints, dataclasses, Protocols       \\
+		                                                      & functools, itertools, generators              \\
+		                                                      & pygments, pydantic, prompt toolkit            \\
+		                                                      & Django                                        \\
+		C++                                                   & CMake, C++17, C++20, Catch2                   \\
+		Web                                                   & HTML, JavaScript, CSS, Django                 \\
+		\IfLanguageName{czech}{Další jazyky}{Other languages} & \LaTeX, Lua, Vimscript, Prolog, Haskell, Rust \\
 	\end{tabularx}
 
 	\vspace{15pt}
@@ -156,10 +177,10 @@
 	\vspace{15pt}
 
 	\begin{tabularx}{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-		Jazyky          & Český jazyk          \\
-		                & Anglický jazyk -- B2 \\
-		                & Německý jazyk -- A2  \\
-		Řidičský průkaz & Skupina B            \\
+		Languages                                                & \IfLanguageName{czech}{Český jazyk}{Czech (mother tongue)} \\
+		                                                         & \IfLanguageName{czech}{Anglický jazyk}{English} -- B2      \\
+		                                                         & \IfLanguageName{czech}{Německý jazyk}{German} -- A2        \\
+		\IfLanguageName{czech}{Řidičský průkaz}{Driving license} & B                                                          \\
 	\end{tabularx}
 
 \end{center}

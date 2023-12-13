@@ -9,16 +9,20 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - name: Compile LaTeX document
+      - name: Compile LaTeX document (EN)
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: main_en.tex
+      - name: Compile LaTeX document (CZ)
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main_cz.tex
       - name: Rename
-        run: mv main.pdf uradnik_cv.pdf
+        run: mv main_en.pdf uradnik_cv_en.pdf && mv main_cz.pdf uradnik_cv_cz.pdf && cp uradnik_cv_en.pdf uradnik_cv.pdf
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
           title: "Automatic Release"
-          files: uradnik_cv.pdf
+          files: uradnik_cv.pdf uradnik_cv_cz.pdf uradnik_cv_en.pdf

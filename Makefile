@@ -1,13 +1,13 @@
 MAINS = $(shell find . -maxdepth 3 -type f -name main.tex)
 
-PDFS = $(MAINS:.tex=.pdf)
+PDFS = main_en.pdf main_cz.pdf
 
 all: doc
 
 doc: $(PDFS)
 
-$(PDFS): %.pdf: $(dir %)/*.tex
-	cd $(dir $<) && pdflatex main.tex || echo "error"
+$(PDFS): %.pdf: %.tex main.tex
+	cd $(dir $<) && pdflatex $(notdir $<) || echo "error"
 
 purge:
 	rm $(MAINS:.tex=.fls) || echo "fine"
