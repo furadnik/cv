@@ -31,6 +31,7 @@
 
 \usepackage{scrlayer-scrpage} % Provides headers and footers configuration
 \usepackage{titlesec} % Allows creating custom \section's
+\usepackage{xcolor}
 \usepackage{marvosym} % Allows the use of symbols
 \usepackage{tabularx,colortbl} % Advanced table configurations
 \usepackage{ebgaramond} % Use the EB Garamond font
@@ -75,6 +76,9 @@
 \newcommand{\paper}[5]{#1. #3. #2. In \emph{#4}, #5.}
 
 \begin{document}
+% footer
+\ofoot{\textit{\color{gray} \href{https://github.com/furadnik/cv/releases/download/latest/uradnik_cv_\IfLanguageName{czech}{cz}{en}.pdf}{\the\year--\the\month--\the\day}}}
+
 
 \begin{center} % Center everything in the document
 
