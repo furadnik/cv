@@ -139,31 +139,23 @@
 	%	PUBLICATIONS
 	%----------------------------------------------------------------------------------------
 
-	\section{\IfLanguageName{czech}{Publikace}{Publications}}
+	\nocite{*}
+	\bibliographystyle{plain} % We choose the "plain" reference style
+	\renewcommand{\refname}{\IfLanguageName{czech}{Publikace}{Publications}}
 
-	\begin{itemize}
-		\item \paper{Filip Úradník, David Sychrovský, Jakub Černý, Martin Černý}{Reducing Optimism Bias in Incomplete Cooperative Games}{2024}
-			{Proc. of the 23rd International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2024), Auckland, New Zealand, May 6 – 10, 2024}{IFAAMAS}
-	\end{itemize}
-	
 
-	\section{\IfLanguageName{czech}{Workshopy}{Workshop Papers}}
-
-	\begin{itemize}
-		\item \paper{Filip Úradník, David Sychrovský, Jakub Černý, Martin Černý}{Active Value Querying to Minimize Additive Approximate Error in Superadditive Set Function Learning}{2024}
-			{Proc. of the 23rd International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2024), Auckland, New Zealand, May 6 – 10, 2024}{IFAAMAS}
-	\end{itemize}
+	\bibliography{papers}
 
 	%----------------------------------------------------------------------------------------
 	%   OUT OF SCHOOL ACTIVITIES
 	%----------------------------------------------------------------------------------------
 
-	\section{\IfLanguageName{czech}{Další aktivita}{Other activities}}
+	\section{\IfLanguageName{czech}{Další aktivity}{Other activities}}
 
 	\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
 		2024          & \IfLanguageName{czech}
-		{Účastnil jsem se konference \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2024, Auckland, Nový Zéland}, kde jsem přednášel o jednom plném paperu, a dvou workshopových paperech.}
-		{I attended the \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2024 Conference, Auckland, New Zealand}, giving talks on one full paper, and two workshop papers.}
+		{Účastnil jsem se konference \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2024, Auckland, Nový Zéland}, kde jsem přednášel o jednom plném paperu \cite{10.5555/3635637.3663047}, a dvou workshopových paperech.}
+		{I attended the \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2024 Conference, Auckland, New Zealand}, giving talks on one full paper \cite{10.5555/3635637.3663047}, and two workshop papers.}
 		\\
 		2024          & \IfLanguageName{czech}
 		{Přednášel jsem na \href{https://kam.mff.cuni.cz/~spring/2024/}{Jarní škole kombinatoriky 2024} na téma \emph{učení kooperativních her}.}

@@ -6,20 +6,23 @@ all: doc
 
 doc: $(PDFS)
 
-$(PDFS): %.pdf: %.tex main.tex
-	cd $(dir $<) && pdflatex $(notdir $<) || echo "error"
+$(PDFS): %.pdf: %.tex main.tex papers.bib
+	pdflatex $(notdir $<) || echo "error"
+	bibtex $(basename $(notdir $<)) || echo "error"
+	pdflatex $(notdir $<) || echo "error"
+	pdflatex $(notdir $<) || echo "error"
 
 purge:
-	rm $(MAINS:.tex=.fls) || echo "fine"
-	rm $(MAINS:.tex=.ist) || echo "fine"
-	rm $(MAINS:.tex=.aux) || echo "fine"
-	rm $(MAINS:.tex=.fdb_latexmk) || echo "fine"
-	rm $(MAINS:.tex=.log) || echo "fine"
-	rm $(MAINS:.tex=.lol) || echo "fine"
-	rm $(MAINS:.tex=.out) || echo "fine"
+	rm $(PDFS:.pdf=.fls) || echo "fine"
+	rm $(PDFS:.pdf=.ist) || echo "fine"
+	rm $(PDFS:.pdf=.aux) || echo "fine"
+	rm $(PDFS:.pdf=.fdb_latexmk) || echo "fine"
+	rm $(PDFS:.pdf=.log) || echo "fine"
+	rm $(PDFS:.pdf=.lol) || echo "fine"
+	rm $(PDFS:.pdf=.out) || echo "fine"
 
 clean: purge
-	rm $(MAINS:.tex=.pdf) || echo "fine"
+	rm $(PDFS) || echo "fine"
 
 upload: doc
 	cd $(dir $<) && ./upload_to_mff.sh || echo "error"
