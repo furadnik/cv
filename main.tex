@@ -57,11 +57,12 @@
 \newcommand{\CharlesUni}{\IfLanguageName{czech}{Univerzita Karlova}{Charles University}}
 \newcommand{\MFF}{\IfLanguageName{czech}{Matematicko-fyzikální fakulta}{Faculty of Mathematics and Physics}}
 \newcommand{\MFFCS}{\IfLanguageName{czech}{Informatická sekce}{School of Computer Science}}
+\newcommand{\point}{\IfLanguageName{czech}{,}{.}}
 
 \newenvironment{work}[5]
 	{\tabularx{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
 	\IfLanguageName{czech}{Zaměstnavatel}{Employer} & \textbf{#1} \hfill #2 \\
-	\IfLanguageName{czech}{Období}{Period}          & #3 --- #4             \\
+	\IfLanguageName{czech}{Období}{Period}          & #3--#4             \\
 	\IfLanguageName{czech}{Pozice}{Position}        & #5                    \\
 	\IfLanguageName{czech}{Náplň práce}{Work} &}
 	{ \endtabularx }
@@ -127,15 +128,15 @@
 	\section{\IfLanguageName{czech}{Vzdělání}{Education}}
 
 	\school{\CharlesUni{}}{\MFF{}, \MFFCS{}}
-	{\IfLanguageName{czech}{Bakalářské, zaměření obecná informatika}{Bachelor of Science in Theoretical Computer Science}}{2021 --- \Present{} \\
-		& \IfLanguageName{czech}{Průměr známek 1,03}{3.96 GPA} \\
+	{\IfLanguageName{czech}{Bakalářské, zaměření obecná informatika}{Bachelor of Science in Theoretical Computer Science}}{2021--\Present{} \\
+		& \IfLanguageName{czech}{Průměr známek}{Grade average} 1\point{}03 \IfLanguageName{czech}{}{(on a 1--5 scale)} \\
 		& \IfLanguageName{czech}{Třikrát v řadě získáno stipendium za vynikající studijní výsledky}{Received the scholarship for excellent study results three times in a row}
 	}
 
 	\vspace{15pt}
 
 	\school{Gymnázium Mimoň}{}
-	{\IfLanguageName{czech}{středoškolské s maturitou}{Secondary school with \href{https://en.wikipedia.org/wiki/Matura\#Czech_Republic}{maturita exam}}}{2013 --- 2021 \\
+	{\IfLanguageName{czech}{středoškolské s maturitou}{Secondary school with \href{https://en.wikipedia.org/wiki/Matura\#Czech_Republic}{maturita exam}}}{2013--2021 \\
 		\IfLanguageName{czech}{Maturitní zkouška}{Maturita exam} & český jazyk, anglický jazyk, matematika, informatika \\
 									 & matematika rozšiřující
 	}
@@ -158,7 +159,7 @@
 	\section{\IfLanguageName{czech}{Další aktivity}{Other Activities}}
 
 	\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-		2024 ---          & \IfLanguageName{czech}
+		2024--         & \IfLanguageName{czech}
 		{Účastním se programu \href{https://reu.dimacs.rutgers.edu/2024/}{Research Experience for Undergraduates} na \href{https://www.rutgers.edu/}{Rutgers University} v New Jersey.}
 		{I am taking part in the \href{https://reu.dimacs.rutgers.edu/2024/}{Research Experience for Undergraduates} program at \href{https://www.rutgers.edu/}{Rutgers University} in New Jersey.}
 		\IfLanguageName{czech}{Pracuji na projektu}{I am working on} \emph{\href{https://reu.dimacs.rutgers.edu/~fu37/}{Truth Learning in Social and Adversarial Setting}}. \\
@@ -172,9 +173,9 @@
 		2023          & \IfLanguageName{czech}
 		{Přednášel jsem na \href{https://kam.mff.cuni.cz/~spring/2023/}{Jarní škole kombinatoriky 2023} na téma \emph{struktura v kooperativní teorii her}.}
 		{I gave a talk at the \href{https://kam.mff.cuni.cz/~spring/2023/}{Spring School of Combinatorics 2023} on \emph{Structure of Cooperative Games}.} \\
-		2022 ---      & \IfLanguageName{czech}{Spoluorganizuji programátorskou soutěž \href{https://kasiopea.matfyz.cz}{Kasiopea}.}
+		2022--     & \IfLanguageName{czech}{Spoluorganizuji programátorskou soutěž \href{https://kasiopea.matfyz.cz}{Kasiopea}.}
 		{I co-organize the \href{https://kasiopea.matfyz.cz}{Kasiopea} programming competition.}                                                            \\
-		2020 --- 2021 & \IfLanguageName{czech}{Pomáhal jsem vytvořit nové školní stránky \href{https://gymi.cz}{Gymnázia Mimoň}.}
+		2020--2021 & \IfLanguageName{czech}{Pomáhal jsem vytvořit nové školní stránky \href{https://gymi.cz}{Gymnázia Mimoň}.}
 		{I helped to create a new website for \href{https://gymi.cz}{Gymnázium Mimoň}.}                                                                     \\
 	\end{tabularx}
 
