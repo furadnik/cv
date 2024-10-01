@@ -9,14 +9,15 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - name: Compile LaTeX document (EN)
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: main_en.tex
-      - name: Compile LaTeX document (CZ)
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: main_cz.tex
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Make CV
+        run: |
+          sudo apt update
+          sudo apt install -y texlive texlive-lang-czechslovak texlive-science texlive-latex-extra git make texlive-fonts-extra
+          sed -i 's/{\\textcolor.*/{}/' macros.tex
+          for file in main_*.tex; do echo "${file/\.tex/}"; make -B MAIN_FILE=${file/\.tex/}; done
+          make -B MAIN_FILE=main 
       - name: Rename
         run: mv main_en.pdf uradnik_cv_en.pdf && mv main_cz.pdf uradnik_cv_cz.pdf && cp uradnik_cv_en.pdf uradnik_cv.pdf
       - uses: "marvinpinto/action-automatic-releases@latest"
