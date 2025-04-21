@@ -276,3 +276,5 @@ TSWLatexianTemp*
 *.lpz
 
 papers_all.bib
+colors.tex
+*.ccf

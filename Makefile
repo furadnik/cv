@@ -1,18 +1,27 @@
-MAINS = $(shell find . -maxdepth 3 -type f -name main.tex)
-
 PDFS = main_en.pdf main_cz.pdf
 
-all: doc
+VENV=.venv
+PIP=$(VENV)/bin/pip
+HUE=$(VENV)/bin/hue
+
+all: doc main.pdf
 
 doc: $(PDFS)
 
-$(PDFS): %.pdf: %.tex main.tex papers.bib papers_cz.bib papers_en.bib
+main.pdf: main_en.pdf
+	cp main_en.pdf main.pdf
+
+$(PDFS): %.pdf: %.tex main.tex papers.bib papers_cz.bib papers_en.bib colors.tex
 	cp papers.bib papers_all.bib
 	cat "$$(echo '$@' | sed 's/\.pdf/.bib/' | sed 's/^main/papers/')" >> papers_all.bib
-	pdflatex $(notdir $<) || echo "error"
+	lualatex $(notdir $<) || echo "error"
 	bibtex $(basename $(notdir $<)) || echo "error"
-	pdflatex $(notdir $<) || echo "error"
-	pdflatex $(notdir $<) || echo "error"
+	lualatex $(notdir $<) || echo "error"
+	lualatex $(notdir $<) || echo "error"
+
+colors.tex: $(VENV)/bin/activate
+	echo "\\definecolor{HueColor}{RGB}{$$($(HUE) --min_contrast AAA --format '{r}, {g}, {b}')}" \
+		>colors.tex
 
 purge:
 	rm $(PDFS:.pdf=.fls) || echo "fine"
@@ -27,7 +36,9 @@ purge:
 clean: purge
 	rm $(PDFS) || echo "fine"
 
-upload: doc
-	cd $(dir $<) && ./upload_to_mff.sh || echo "error"
+$(VENV)/bin/activate:
+	python -m venv $(VENV)
+	$(PIP) install 'git+https://github.com/furadnik/yearly-hue'
 
-.PHONY: all purge clean
+
+.PHONY: all purge clean colors.tex
