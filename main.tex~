@@ -34,7 +34,7 @@
 \usepackage{tabularx} % Advanced table configurations
 
 \titleformat{\section}{\Large\scshape}{}{0em}{}[\titlerule] % Section formatting
-\titlespacing{\section}{0em}{1.5em}{.8em}
+\titlespacing{\section}{0em}{1.28em}{.8em}
 
 
 \newcommand{\gray}{\color{darkgray!80}} % Custom highlighting for the work experience and education sections
@@ -120,54 +120,51 @@
 		Také se zajímám o free and open source software.
 	}{
 		I am a master's student of computer science at Charles University in Prague.
-		Though I usually prefer to work on purely theoretical projects, I do also enjoy projects which are part-theory and part-application.
-		I am also passionate about free and open-source software, and all things Neovim.
+		I like to stand at the line between theory and practice.
+		My research interests include reinforcement learning, algorithmic game theory, graph theory and combinatorics in general.
+		I am also passionate about free and open source software, and all things Neovim.
 	}
 \end{intro}
 
 
 \begin{multicols}{2}
-	\sect{\lng{Pracovní zkušenosti}{Work \& Research Experience}}
+\sect{\lng{Pracovní zkušenosti}{Work Experience}}
 
 \begin{work}{REU Student Researcher}{DIMACS}{2024}{NJ, US}
 	\lng{Účastnil jsem se programu REU na}
-	{I participated in REU at} \href{http://dmac.rutgers.edu/}{DIMACS}, \href{https://www.rutgers.edu/}{Rutgers University}.
-	\lng{Pracoval jsem na}
-	{I worked on} \emph{\href{https://reu.dimacs.rutgers.edu/~fu37/}{Truth Learning in Social and Adversarial Setting}}.
-	\lng{Tento projekt vyústil v \href{https://furadnik.github.io/projects/2025_truth_learning}{publikaci} přijatou na AAMAS 2025.}
-	{Our work resulted in a \href{https://furadnik.github.io/projects/2025_truth_learning}{publication} accepted to AAMAS 2025.}
+	{I took part in the REU program at} \href{http://dmac.rutgers.edu/}{DIMACS}, \href{https://www.rutgers.edu/}{Rutgers University}.
+	\lng{Pod vedením profesorky Jie Gao jsem pracoval na}
+	{I worked under the mentorship of Professor Jie Gao on} \emph{\href{https://reu.dimacs.rutgers.edu/~fu37/}{Truth Learning in Social and Adversarial Setting}}.
 \end{work}
 
 \worksplit
 
 \begin{work}{Software Developer}{CZ.NIC}{2022\rangedash2024}{\Praha{}}
-	\lng{Vývoj CLI pro komunikaci s registrem domén}{I developed a CLI in Python for communication with a domain registry}.
-	\lng{Dostupné přes systém}{The project is available on} \href{https://gitlab.nic.cz/fred/eppic}{GitLab}.
+	\lng{Vývoj CLI pro komunikaci s registrem domén}{I developed a CLI for communication with a domain registry}.\\
+	\lng{Dostupné přes systém}{Available on} \href{https://gitlab.nic.cz/fred/eppic}{GitLab}.
 \end{work}
 
 \sect{\lng{Dovednosti}{Skills}}
 
-\skill{Python}{I prefer functional programming, typehints}
+\skill{Linux}{System administration, containers, Docker, CI/CD}
 
-\skill{C++}{C++17 \lng{a novější}{and newer}, unittests via Catch2, CMake}
+\skill{Python}{type-hints, dataclasses, functools, itertools, pydantic}
+
+\skill{ML \& Statistics}{numpy, pytorch, keras, scipy, gymnasium}
+
+\skill{C++}{CMake, Catch2, C++17 \lng{a novější}{and newer}}
 
 \textbf{\LaTeX, Lua, Prolog, Haskell, Rust}
 
 \skillsplit
 
-\skill{Linux}{System administration, containers, Docker, CI/CD}
-
-\skill{ML \& Statistics}{numpy, pytorch, keras, scipy, gymnasium}
-
-\skillsplit
-
 \skill{\lng{Diskrétní matematika}{Discrete Mathematics}}
-{\lng{Grafové algoritmy, Regularity lemma, stromová šířka, množinové funkce, kooperativní teorie her}
-{Graph Algorithms, Set Functions, Cooperative Game Theory, Regularity Lemma, Treewidth}}
+{\lng{Grafové algoritmy, Regularity lemma, stromová šířka, množinové funkce}
+{Graph Algorithms, Set Functions, Regularity Lemma, Treewidth}}
 
 \skill{\lng{Teoretická informatika}{Theoretical CS}}
-{\lng{Parametrizovaná složitost, amortizovaná analýza, složitostní redukce, algoritmická teorie her}
-{Parameterized Complexity, Amortized Analysis, Completeness Reductions, Algorithmic Game Theory}}
+{\lng{Parametrizovaná složitost, amortizovaná analýza, složitostní redukce, algoritmická teorie her, kooperativní teorie her}
+{Parameterized Complexity, Amortized Analysis, Completeness Reductions, Algorithmic Game Theory, Cooperative Game Theory}}
 
 \skill{\lng{Optimalizace}{Optimization}}
 {\lng{Lineární programování, semidefinitní programování, KKT podmínky, (deep) (reinforcement) learning}{Linear Programming, Semidefinite Programming, KKT conditions, (Deep) (Reinforcement) Learning}}
@@ -177,14 +174,6 @@
 \skill{\lng{Cizí jazyky}{Languages}}{\lng{}{Czech (native), }\lng{anglický jazyk}{English} (C1), \lng{německý jazyk}{German} (A2)}
 
 \columnbreak
-
-\section{\lng{Oblasti výzkumu}{Research Interests}}
-
-Reinforcement learning \& game theory, \\
-graph theory \& social networks, \\
-combinatorics \& discrete mathematics, \\
-cooperative game theory \& set functions.
-
 \section{\lng{Vzdělání}{Education}}
 
 \begin{school}{\CharlesUni{}}{\Praha}
@@ -208,7 +197,7 @@ cooperative game theory \& set functions.
 
 \begin{school}{Gymnázium Mimoň}{Mimoň, \CZ}
 	{\lng{Středoškolské s maturitou}{Secondary school with \href{https://en.wikipedia.org/wiki/Matura\#Czech_Republic}{maturita exam}}}{2013\rangedash{}2021}
-	% Maturita: český jazyk, anglický jazyk, matematika, informatika, matematika rozšiřující.
+	Maturita: český jazyk, anglický jazyk, matematika, informatika, matematika rozšiřující.
 \end{school}
 \end{multicols}
 
