@@ -33,8 +33,8 @@
 \usepackage{titlesec} % Allows creating custom \section's
 \usepackage{tabularx} % Advanced table configurations
 
-\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Section formatting
-\titlespacing{\section}{0em}{.8em}{.8em}
+\titleformat{\section}{\large\scshape\color{HueColor}\raggedright}{}{0em}{}[\titlerule] % Section formatting
+\titlespacing{\section}{0em}{1.2em}{.8em}
 
 
 \newcommand{\gray}{\color{darkgray!80}} % Custom highlighting for the work experience and education sections
@@ -57,7 +57,7 @@
 \newenvironment{work}[4] {{\textsc{#1}, \textbf{#2} \hfill \gray\small\itshape #4,\hspace{3pt} #3}\break\small}{}
 \newcommand\worksplit{\vspace{.9em}}
 
-\newcommand\skill[2]{ {#1}.\; {\gray\small\itshape #2}}
+\newcommand\skill[2]{ \textbf{#1.}\; {\small\itshape #2}}
 \newcommand\skillsplit{\vspace{.9em}}
 \newcommand\schoolsplit{\vspace{1.5em}}
 
@@ -153,7 +153,7 @@
 
 \skill{C++}{CMake, Catch2, C++17 \lng{a novější}{and newer}}
 
-\LaTeX, Lua, Prolog, Haskell, Rust
+\textbf{\LaTeX, Lua, Prolog, Haskell, Rust}
 
 \skillsplit
 
