@@ -36,9 +36,8 @@
 \titleformat{\section}{\Large\scshape}{}{0em}{}[\titlerule] % Section formatting
 \titlespacing{\section}{0em}{1.5em}{.8em}
 
-
-\newcommand{\gray}{\color{darkgray!80}} % Custom highlighting for the work experience and education sections
-\newcommand{\splitspace}{2cm}
+% highlight for locations & date ranges
+\newcommand{\gray}{\color{darkgray!80}} 
 
 \def\lng{\IfLanguageName{czech}}
 
@@ -56,22 +55,16 @@
 
 % position, company, date, place
 \newenvironment{work}[4] {{\textbf{#1}, \textsc{#2} \hfill \gray\small\itshape #4,\hspace{3pt} #3}\break\small}{}
-\newcommand\worksplit{\vspace{.9em}}
+\newcommand\worksplit{\vspace{1.5em}}
 
 \newcommand\skill[2]{ \textbf{#1.} {\small\itshape #2}}
 \newcommand\skillsplit{\vspace{1.5em}}
 \newcommand\schoolsplit{\vspace{1.5em}}
 
 % school, faculty, place, period
+\newcommand\schooltitle[4]{{\textbf{#1}\hfill \gray\small\itshape #2,\hspace{3pt} #4\break}\textsc{#3}}
 \newenvironment{school}[4]
-{{\textbf{#1}\hfill \gray\small\itshape #2,\hspace{3pt} #4\break}\textsc{#3}\hfill\break\small}{}
-	% {\tabularx{0.97\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-	% 	\lng{Škola}{School}       & \textbf{#1} \hfill #3 \\
-	% 	\if \relax\detokenize{#2}\relax\else \lng{Fakulta}{Faculty} & #2 \\ \fi
-	% 	\lng{Druh studia}{Type of study} & #4          \\
-	% 	\lng{Období}{Period}      & #5                 \\
-	% }
-	% { \endtabularx }
+{\schooltitle{#1}{#2}{#3}{#4}\hfill\break\small}{}
 
 % position, company, date, place
 \newenvironment{intro}{\vspace{.3em}\begin{quote}}{\end{quote}\vspace{.3em}}
@@ -121,12 +114,15 @@
 	}{
 		I am a master's student of computer science at Charles University in Prague.
 		Though I usually prefer to work on purely theoretical projects, I do also enjoy projects which are part-theory and part-application.
-		I am also passionate about free and open-source software, and all things Neovim.
+		I am passionate about free and open-source software, and all things Neovim.
 	}
 \end{intro}
 
 
 \begin{multicols}{2}
+	% do not perfectly balance the columns
+	\raggedcolumns
+
 	\sect{\lng{Pracovní zkušenosti}{Work \& Research Experience}}
 
 \begin{work}{REU Student Researcher}{DIMACS}{2024}{NJ, US}
@@ -189,6 +185,11 @@ cooperative game theory \& set functions.
 
 \section{\lng{Vzdělání}{Education}}
 
+\schooltitle{University of Copenhagen}{\lng{Kodaň}{Copenhagen}, DK}
+{\lng{Erasmus exchange, Computer Science}{Erasmus exchange, Computer Science}}{2025}
+
+\schoolsplit
+
 \begin{school}{\CharlesUni{}}{\Praha}
 {\lng{Magisterské, Diskrétní modely a algoritmy}{Master's degree, Discrete Models and Algorithms}}{2024\rangedash{}\Present{}}
 \lng{Průměr známek}{Grade average of} 1\point{}00\lng{}{ (on a \href{https://en.wikipedia.org/wiki/Grading_systems_by_country\#Czech_Republic}{1\rangedash{}4 scale})}.
@@ -208,10 +209,9 @@ cooperative game theory \& set functions.
 
 \schoolsplit
 
-\begin{school}{Gymnázium Mimoň}{Mimoň, \CZ}
+\schooltitle{Gymnázium Mimoň}{Mimoň, \CZ}
 	{\lng{Středoškolské s maturitou}{Secondary school with \href{https://en.wikipedia.org/wiki/Matura\#Czech_Republic}{maturita exam}}}{2013\rangedash{}2021}
-	% Maturita: český jazyk, anglický jazyk, matematika, informatika, matematika rozšiřující.
-\end{school}
+
 \end{multicols}
 
 \nocite{*}
@@ -221,10 +221,7 @@ cooperative game theory \& set functions.
 
 \section{\lng{Další aktivity}{Other Activities}}
 
-\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{\splitspace}X}
-	2025          & \lng
-	{Účastnil jsem se programu Erasmus+ na}
-	{I took part in the Erasmus+ program at the} University of Copenhagen. \\
+\begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{2cm}X}
 	2024          & \lng
 	{Získal jsem \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{Cenu Jirky Matouška} za článek  \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{\emph{Reducing Optimism Bias in Incomplete Cooperative Games}}~\cite{10.5555/3635637.3663047}.}
 	{I received the \href{https://www.mff.cuni.cz/en/kam/research/prize-of-jirka-matousek}{Prize of Jirka Matoušek} for \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{\emph{Reducing Optimism Bias in Incomplete Cooperative Games}}~\cite{10.5555/3635637.3663047}.} \\
