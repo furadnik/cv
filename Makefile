@@ -15,7 +15,7 @@ $(PDFS): %.pdf: %.tex main.tex papers.bib papers_cz.bib papers_en.bib colors.tex
 	cp papers.bib papers_all.bib
 	cat "$$(echo '$@' | sed 's/\.pdf/.bib/' | sed 's/^main/papers/')" >> papers_all.bib
 	lualatex $(notdir $<) || echo "error"
-	bibtex $(basename $(notdir $<)) || echo "error"
+	biber $(basename $(notdir $<)) || echo "error"
 	lualatex $(notdir $<) || echo "error"
 	lualatex $(notdir $<) || echo "error"
 

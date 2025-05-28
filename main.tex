@@ -25,6 +25,20 @@
 % icons
 \usepackage{fontawesome5}
 \usepackage{academicons}
+\usepackage[sorting=ddnt,backend=bibtex8,maxbibnames=99,isbn=false]{biblatex}
+\addbibresource{papers_all.bib}
+
+\renewcommand*{\mkbibnamefamily}[1]{
+\ifitemannotation{highlight}
+  {\textbf{#1}}
+  {#1}%
+\ifitemannotation{first}
+  {\textsuperscript{*}}
+  {}%
+\ifitemannotation{corresponding}
+  {$^\dagger$}
+  {}%
+}%%
 
 % custom section titles
 \newcommand\sect[1]{\section*{#1}}
@@ -34,7 +48,7 @@
 \usepackage{tabularx} % Advanced table configurations
 
 \titleformat{\section}{\Large\scshape}{}{0em}{}[\titlerule] % Section formatting
-\titlespacing{\section}{0em}{1.5em}{.8em}
+\titlespacing{\section}{0em}{1.1em}{.8em}
 
 % highlight for locations & date ranges
 \newcommand{\gray}{\color{darkgray!80}} 
@@ -55,11 +69,11 @@
 
 % position, company, date, place
 \newenvironment{work}[4] {{\textbf{#1}, \textsc{#2} \hfill \gray\small\itshape #4,\hspace{3pt} #3}\break\small}{}
-\newcommand\worksplit{\vspace{1.5em}}
+\newcommand\worksplit{\vspace{1.1em}}
 
 \newcommand\skill[2]{ \textbf{#1.} {\small\itshape #2}}
-\newcommand\skillsplit{\vspace{1.5em}}
-\newcommand\schoolsplit{\vspace{1.5em}}
+\newcommand\skillsplit{\vspace{1.1em}}
+\newcommand\schoolsplit{\vspace{1.1em}}
 
 % school, faculty, place, period
 \newcommand\schooltitle[4]{{\textbf{#1}\hfill \gray\small\itshape #2,\hspace{3pt} #4\break}\textsc{#3}}
@@ -215,13 +229,17 @@ cooperative game theory \& set functions.
 \end{multicols}
 
 \nocite{*}
-\bibliographystyle{unsrt} % We choose the "plain" reference style
 \renewcommand{\refname}{\lng{Publikace}{Publications}}
-\bibliography{papers_all}
+\defbibnote{mynote}{$^*$ \lng{značí sdílené první autorství}{indicates equal contribution}.}
+\printbibliography[prenote=mynote]
 
 \section{\lng{Další aktivity}{Other Activities}}
 
 \begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{2cm}X}
+	2025          & \lng
+	{Účastnil jsem se konference \href{https://www.aamas2025.org/}{AAMAS 2025} v Detroitu, USA, kde jsem prezentoval jeden plný článek \cite{aamas25}.}
+	{I attended the \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2025 Conference} in Detroit, USA, presenting one full paper \cite{aamas25}.}
+	\\
 	2024          & \lng
 	{Získal jsem \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{Cenu Jirky Matouška} za článek  \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{\emph{Reducing Optimism Bias in Incomplete Cooperative Games}}~\cite{10.5555/3635637.3663047}.}
 	{I received the \href{https://www.mff.cuni.cz/en/kam/research/prize-of-jirka-matousek}{Prize of Jirka Matoušek} for \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{\emph{Reducing Optimism Bias in Incomplete Cooperative Games}}~\cite{10.5555/3635637.3663047}.} \\

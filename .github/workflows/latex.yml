@@ -21,7 +21,7 @@ jobs:
       - name: Make CV
         run: |
           sudo apt update
-          sudo apt install -y texlive texlive-lang-czechslovak texlive-science texlive-latex-extra git make texlive-fonts-extra
+          sudo apt install -y texlive texlive-lang-czechslovak texlive-science texlive-latex-extra git make texlive-fonts-extra biber
           make -B
       - name: Rename
         run: mv main_en.pdf uradnik_cv_en.pdf && mv main_cz.pdf uradnik_cv_cz.pdf && cp uradnik_cv_en.pdf uradnik_cv.pdf
