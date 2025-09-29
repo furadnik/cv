@@ -1,5 +1,6 @@
 % smaller margins
-\usepackage[a4paper, margin=0.2in]{geometry}
+\usepackage[a4paper, margin=0.3in]{geometry}
+\pagestyle{empty}
 
 % language
 \usepackage{babel}
@@ -9,7 +10,7 @@
 % column separation
 \setlength{\columnsep}{1cm}
 % reduce padding around
-\setlength{\multicolsep}{1em}
+\setlength{\multicolsep}{0em}
 
 % handle fonts encoding.
 % \usepackage[utf8]{inputenc}
@@ -48,7 +49,8 @@
 \usepackage{tabularx} % Advanced table configurations
 
 \titleformat{\section}{\Large\scshape}{}{0em}{}[\titlerule] % Section formatting
-\titlespacing{\section}{0em}{1.1em}{.8em}
+\titlespacing{\section}{0em}{1.8em}{.8em}
+\def\np{\textsf{NP}}
 
 % highlight for locations & date ranges
 \newcommand{\gray}{\color{darkgray!80}} 
@@ -69,11 +71,11 @@
 
 % position, company, date, place
 \newenvironment{work}[4] {{\textbf{#1}, \textsc{#2} \hfill \gray\small\itshape #4,\hspace{3pt} #3}\break\small}{}
-\newcommand\worksplit{\vspace{1.1em}}
+\newcommand\worksplit{\vspace{1.5em}}
 
 \newcommand\skill[2]{ \textbf{#1.} {\small\itshape #2}}
-\newcommand\skillsplit{\vspace{1.1em}}
-\newcommand\schoolsplit{\vspace{1.1em}}
+\newcommand\skillsplit{\vspace{1.5em}}
+\newcommand\schoolsplit{\vspace{1.5em}}
 
 % school, faculty, place, period
 \newcommand\schooltitle[4]{{\textbf{#1}\hfill \gray\small\itshape #2,\hspace{3pt} #4\break}\textsc{#3}}
@@ -81,7 +83,7 @@
 {\schooltitle{#1}{#2}{#3}{#4}\hfill\break\small}{}
 
 % position, company, date, place
-\newenvironment{intro}{\vspace{.3em}\begin{quote}}{\end{quote}\vspace{.3em}}
+\newenvironment{intro}{\vspace{-.3em}\begin{quote}}{\end{quote}\vspace{.9em}}
 
 
 \begin{document}
@@ -100,7 +102,7 @@
 	\end{minipage}
 \end{multicols}
 
-\vspace{.2em}
+\vspace{.5em}
 
 \begin{center}
 	\small
@@ -134,26 +136,75 @@
 
 
 \begin{multicols}{2}
-	% do not perfectly balance the columns
-	\raggedcolumns
+% do not perfectly balance the columns
+\raggedcolumns
 
-	\sect{\lng{Pracovní zkušenosti}{Work \& Research Experience}}
+\sect{\lng{Oblasti výzkumu}{Research Interests}}
+
+Reinforcement learning \& game theory, \\
+graph theory \& social networks, \\
+combinatorics \& discrete mathematics, \\
+cooperative game theory \& set functions.
+
+
+\sect{\lng{Pracovní zkušenosti}{Work \& Research Experience}}
+
+\begin{work}{Research Intern}{Equilibre}{2025}{\Praha{}}
+	\lng{Pomáhal jsem programovat software pro výzkum v oblasti AI.}
+	{Helped design \& program software intended for AI research.}
+\end{work}
+
+\worksplit
 
 \begin{work}{REU Student Researcher}{DIMACS}{2024}{NJ, US}
 	\lng{Účastnil jsem se programu REU na}
-	{I participated in REU at} \href{http://dmac.rutgers.edu/}{DIMACS}, \href{https://www.rutgers.edu/}{Rutgers University}.
-	\lng{Pracoval jsem na}
-	{I worked on} \emph{\href{https://reu.dimacs.rutgers.edu/~fu37/}{Truth Learning in Social and Adversarial Setting}}.
-	\lng{Naše práce vyústila v \href{https://furadnik.github.io/projects/2025_truth_learning}{publikaci} přijatou na AAMAS 2025}
-	{Our work resulted in a \href{https://furadnik.github.io/projects/2025_truth_learning}{publication} accepted to AAMAS 2025}~\cite{aamas25}.
+	{Participated in REU at} \href{http://dmac.rutgers.edu/}{DIMACS}, \href{https://www.rutgers.edu/}{Rutgers University}.
+	\lng{Pracoval jsem pod prof. Jie Gao na}
+	{I worked under Prof. Jie Gao on} \emph{\href{https://reu.dimacs.rutgers.edu/~fu37/}{Truth Learning in Social and Adversarial Setting}}.
+	\lng{Naše práce vyústila v \href{https://furadnik.github.io/projects/2025_truth_learning}{publikaci} přijatou na konferenci AAMAS 2025}
+	{Our work resulted in a \href{https://furadnik.github.io/projects/2025_truth_learning}{publication} accepted to the AAMAS 2025 conference}~\cite{aamas25}.
 \end{work}
 
 \worksplit
 
 \begin{work}{Software Developer}{CZ.NIC}{2022\rangedash2024}{\Praha{}}
-	\lng{Vývoj CLI v Pythonu pro komunikaci s registrem domén}{I developed a CLI in Python for communication with a domain registry}.
+	\lng{Vývoj CLI v Pythonu pro komunikaci s registrem domén}{Developed a CLI in Python for communication with a domain registry}.
 	\lng{Projekt je dostupný přes systém}{The project is available on} \href{https://gitlab.nic.cz/fred/eppic}{GitLab}.
 \end{work}
+
+\columnbreak
+
+\sect{\lng{Vzdělání}{Education}}
+
+\schooltitle{University of Copenhagen}{\lng{Kodaň}{Copenhagen}, DK}
+{\lng{Erasmus exchange, Computer Science}{Erasmus exchange, Computer Science}}{2025}
+
+\schoolsplit
+
+\begin{school}{\CharlesUni{}}{\Praha}
+{\lng{Magisterské, Diskrétní modely a algoritmy}{Master's degree, Discrete Models and Algorithms}}{2024\rangedash{}\Present{}}
+\lng{Průměr známek}{Grade average of} 1\point{}00\lng{}{ (on a \href{https://en.wikipedia.org/wiki/Grading_systems_by_country\#Czech_Republic}{1\rangedash{}4 scale})}.
+\end{school}
+
+\schoolsplit
+
+\begin{school}{\CharlesUni{}}{\Praha}
+{\lng{Bakalářské, zaměření obecná informatika}{Bachelor's degree, Theoretical Computer Science}}{2021\rangedash{}2024}
+\lng{Průměr známek}{Grade average of} 1\point{}03\lng{}{ (on a \href{https://en.wikipedia.org/wiki/Grading_systems_by_country\#Czech_Republic}{1\rangedash{}4 scale})}. \\
+\lng{Bakalářská práce na téma}{Thesis on} \href{https://furadnik.github.io/projects/2024_bakalarka.html}{\lng{Balancování prostorové složitosti a nejednoznačnosti superaditivních set funkcí}{Balancing Space Complexity and Ambiguity in Superadditive Set Functions}} \cite{Uradnik2024}, \lng{výsledek: výborně}{grade: excellent}. \\
+\lng{Předměty státní zkoušky:}{State exam subjects:} \lng
+{Kombinatorika, Diferenciální a integrální počet ve více rozměrech, Pokročilé algoritmy a datové struktury, Pokročilá diskrétní matematika}
+{Combinatorics, Multi-variable differential \& integral calculus, Advanced algorithms \& data structures, Advanced discrete mathematics}. \lng{Výsledek: výborně}{Grade: excellent}. \\
+\lng{Třikrát v řadě získáno stipendium za vynikající studijní výsledky}{Received the scholarship for excellent study results three times in a row}.
+\end{school}
+
+\schoolsplit
+
+\schooltitle{Gymnázium Mimoň}{Mimoň, \CZ}
+	{\lng{Středoškolské s maturitou}{Secondary school with \href{https://en.wikipedia.org/wiki/Matura\#Czech_Republic}{maturita exam}}}{2013\rangedash{}2021}
+\end{multicols}
+
+\vspace{-.9em}
 
 \sect{\lng{Dovednosti}{Skills}}
 
@@ -188,68 +239,23 @@
 
 \skill{\lng{Cizí jazyky}{Languages}}{\lng{}{Czech (native), }\lng{anglický jazyk}{English} (B2\rangedash{}C1), \lng{německý jazyk}{German} (A2).}
 
-\columnbreak
-
-\section{\lng{Oblasti výzkumu}{Research Interests}}
-
-Reinforcement learning \& game theory, \\
-graph theory \& social networks, \\
-combinatorics \& discrete mathematics, \\
-cooperative game theory \& set functions.
-
-\section{\lng{Vzdělání}{Education}}
-
-\schooltitle{University of Copenhagen}{\lng{Kodaň}{Copenhagen}, DK}
-{\lng{Erasmus exchange, Computer Science}{Erasmus exchange, Computer Science}}{2025}
-
-\schoolsplit
-
-\begin{school}{\CharlesUni{}}{\Praha}
-{\lng{Magisterské, Diskrétní modely a algoritmy}{Master's degree, Discrete Models and Algorithms}}{2024\rangedash{}\Present{}}
-\lng{Průměr známek}{Grade average of} 1\point{}00\lng{}{ (on a \href{https://en.wikipedia.org/wiki/Grading_systems_by_country\#Czech_Republic}{1\rangedash{}4 scale})}.
-\end{school}
-
-\schoolsplit
-
-\begin{school}{\CharlesUni{}}{\Praha}
-{\lng{Bakalářské, zaměření obecná informatika}{Bachelor's degree, Theoretical Computer Science}}{2021\rangedash{}2024}
-\lng{Průměr známek}{Grade average of} 1\point{}03\lng{}{ (on a \href{https://en.wikipedia.org/wiki/Grading_systems_by_country\#Czech_Republic}{1\rangedash{}4 scale})}. \\
-\lng{Bakalářská práce na téma}{Thesis on} \href{https://furadnik.github.io/projects/2024_bakalarka.html}{\lng{Balancování prostorové složitosti a nejednoznačnosti superaditivních set funkcí}{Balancing Space Complexity and Ambiguity in Superadditive Set Functions}} \cite{Uradnik2024}, \lng{výsledek: výborně}{grade: excellent}. \\
-\lng{Předměty státní zkoušky:}{State exam subjects:} \lng
-{Kombinatorika, Diferenciální a integrální počet ve více rozměrech, Pokročilé algoritmy a datové struktury, Pokročilá diskrétní matematika}
-{Combinatorics, Multi-variable differential \& integral calculus, Advanced algorithms \& data structures, Advanced discrete mathematics}. \lng{Výsledek: výborně}{Grade: excellent}. \\
-\lng{Třikrát v řadě získáno stipendium za vynikající studijní výsledky}{Received the scholarship for excellent study results three times in a row}.
-\end{school}
-
-\schoolsplit
-
-\schooltitle{Gymnázium Mimoň}{Mimoň, \CZ}
-	{\lng{Středoškolské s maturitou}{Secondary school with \href{https://en.wikipedia.org/wiki/Matura\#Czech_Republic}{maturita exam}}}{2013\rangedash{}2021}
-
-\end{multicols}
-
-\nocite{*}
-\renewcommand{\refname}{\lng{Publikace}{Publications}}
-\defbibnote{mynote}{$^*$ \lng{značí sdílené první autorství}{indicates equal contribution}.}
-\printbibliography[prenote=mynote]
-
 \section{\lng{Další aktivity}{Other Activities}}
 
 \begin{tabularx}{\linewidth}{>{\raggedleft\scshape}p{2cm}X}
 	2025          & \lng
-	{Přednášel jsem na konferenci \href{https://www.mff.cuni.cz/cs/iuuk/akce/konference/stti-2025}{STTI 2025} o NP-těžkosti problému Truth Learning \cite{aamas25}.}
-	{I gave a talk at the \href{https://www.mff.cuni.cz/cs/iuuk/akce/konference/stti-2025}{STTI 2025} conference on NP-hardness of Truth Learning \cite{aamas25}.}
+	{Přednášel jsem na konferenci \href{https://www.mff.cuni.cz/cs/iuuk/akce/konference/stti-2025}{STTI 2025} o \emph{\np-těžkosti problému Truth Learning} \cite{aamas25}.}
+	{I gave a talk at the \href{https://www.mff.cuni.cz/cs/iuuk/akce/konference/stti-2025}{STTI 2025} conference on \emph{\np-hardness of Truth Learning} \cite{aamas25}.}
 	\\
 	2025          & \lng
 	{Účastnil jsem se konference \href{https://www.aamas2025.org/}{AAMAS 2025} v Detroitu, USA, kde jsem prezentoval jeden plný článek \cite{aamas25}.}
-	{I attended the \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2025 Conference} in Detroit, USA, presenting one full paper \cite{aamas25}.}
+	{I attended the \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2025} conference in Detroit, USA, presenting one full paper \cite{aamas25}.}
 	\\
 	2024          & \lng
 	{Získal jsem \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{Cenu Jirky Matouška} za článek  \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{\emph{Reducing Optimism Bias in Incomplete Cooperative Games}}~\cite{10.5555/3635637.3663047}.}
 	{I received the \href{https://www.mff.cuni.cz/en/kam/research/prize-of-jirka-matousek}{Prize of Jirka Matoušek} for \href{https://www.mff.cuni.cz/cs/kam/vyzkum/cena-jirky-matouska}{\emph{Reducing Optimism Bias in Incomplete Cooperative Games}}~\cite{10.5555/3635637.3663047}.} \\
 	2024          & \lng
 	{Účastnil jsem se konference \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2024} v Aucklandu na Novém Zélandu, kde jsem přednášel o jednom plném článku \cite{10.5555/3635637.3663047} a dvou workshopových článcích.}
-	{I attended the \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2024 Conference} in Auckland, New Zealand, giving talks on one full paper \cite{10.5555/3635637.3663047}, and two workshop papers.}
+	{I attended the \href{https://www.aamas2024-conference.auckland.ac.nz/}{AAMAS 2024} conference in Auckland, New Zealand, giving talks on one full paper \cite{10.5555/3635637.3663047}, and two workshop papers.}
 	\\
 	2024          & \lng
 	{Přednášel jsem na \href{https://kam.mff.cuni.cz/~spring/2024/}{Jarní škole kombinatoriky 2024} na téma \emph{učení kooperativních her}.}
@@ -264,6 +270,10 @@ cooperative game theory \& set functions.
 \end{tabularx}
 
 \vfill
+\lng
+{Seznam publikací na další straně.}
+{See the next page for a list of publications.}
+\vfill
 \hfill
 \href{https://github.com/furadnik/cv/releases/download/latest/uradnik_cv_\lng{cz}{en}.pdf}{
 	\color{gray}
@@ -271,6 +281,23 @@ cooperative game theory \& set functions.
 	\today
 }
 
+\nocite{*}
+\renewcommand{\refname}{\lng{Publikace}{Publications}}
+\defbibnote{mynote}{$^*$ \lng{značí sdílené první autorství}{indicates equal contribution}.}
+\printbibliography[prenote=mynote]
+
+% TODO: put this in a footer
+{
+	\color{gray}
+	\itshape
+	\vfill
+
+	Filip Úradník
+	\hfill
+	2
+	\hfill
+	\href{https://github.com/furadnik/cv/releases/download/latest/uradnik_cv_\lng{cz}{en}.pdf}{\color{gray}\today}
+}
 
 \end{document}
 
