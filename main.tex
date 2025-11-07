@@ -41,6 +41,9 @@
   {}%
 }%%
 
+% contact link
+\newcommand\contactLink[3]{#1\ \href{#2}{#3}}
+
 % custom section titles
 \newcommand\sect[1]{\section*{#1}}
 \newcommand\ssect[1]{\subsection*{#1}}
@@ -107,15 +110,15 @@
 \begin{center}
 	\small
 	\hspace{.5in}
-	\faGlobe\ \texttt{\href{https://furadnik.github.io}{furadnik.github.io}}
+	\contactLink{\faGlobe}{https://furadnik.github.io}{\tt furadnik.github.io}
 	\hfill
-	\faGithub\ \texttt{\href{https://github.com/furadnik}{furadnik}}                                                                      
+	\contactLink{\faGithub}{https://github.com/furadnik}{\tt furadnik}                                                                      
 	\hfill
-	\faLinkedin\ \texttt{\href{https://www.linkedin.com/in/furadnik/}{furadnik}}
+	\contactLink{\faLinkedin}{https://www.linkedin.com/in/furadnik/}{\tt furadnik}
 	\hfill
-	\aiGoogleScholarSquare\ \href{https://scholar.google.com/citations?user=7AvTiqgAAAAJ}{Filip Úradník}
+	\contactLink{\aiGoogleScholarSquare}{https://scholar.google.com/citations?user=7AvTiqgAAAAJ}{Filip Úradník}
 	\hfill
-	\aiOrcid\ \texttt{\href{https://orcid.org/0009-0009-3058-6608}{0009-0009-3058-6608}}
+	\contactLink{\aiOrcid}{https://orcid.org/0009-0009-3058-6608}{\tt 0009-0009-3058-6608}
 	\hspace{.5in}
 
 \end{center}
@@ -141,10 +144,9 @@
 
 \sect{\lng{Oblasti výzkumu}{Research Interests}}
 
-Reinforcement learning \& game theory, \\
-graph theory \& social networks, \\
-combinatorics \& discrete mathematics, \\
-cooperative game theory \& set functions.
+Graph theory \& discrete mathematics, \\
+complexity \& parameterized algorithms, \\
+(cooperative) game theory \& set functions.
 
 
 \sect{\lng{Pracovní zkušenosti}{Work \& Research Experience}}
