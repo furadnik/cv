@@ -1,4 +1,4 @@
-PDFS = main_en.pdf main_cz.pdf
+PDFS = main_en.pdf main_cz.pdf main_publications.pdf
 
 VENV=.venv
 PIP=$(VENV)/bin/pip
@@ -18,6 +18,15 @@ $(PDFS): %.pdf: %.tex main.tex papers.bib papers_cz.bib papers_en.bib colors.tex
 	biber $(basename $(notdir $<)) || echo "error"
 	lualatex $(notdir $<) || echo "error"
 	lualatex $(notdir $<) || echo "error"
+
+main_publications.pdf: main_publications.tex papers.bib papers_en.bib colors.tex
+	cp papers.bib papers_all.bib
+	cat "papers_en.bib" >> papers_all.bib
+	lualatex $(notdir $<) || echo "error"
+	biber $(basename $(notdir $<)) || echo "error"
+	lualatex $(notdir $<) || echo "error"
+	lualatex $(notdir $<) || echo "error"
+
 
 colors.tex: $(VENV)/bin/activate
 	echo "\\definecolor{HueColor}{RGB}{$$($(HUE) --min_contrast AAA --format '{r}, {g}, {b}')}" \

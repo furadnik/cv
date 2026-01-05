@@ -1,0 +1,67 @@
+\documentclass[8pt]{article} % Paper options using the scrartcl class
+\usepackage[main=english,czech]{babel}
+
+% smaller margins
+\usepackage[a4paper, margin=0.3in]{geometry}
+\pagestyle{empty}
+
+% language
+\usepackage{babel}
+\usepackage{iflang}
+
+\usepackage{multicol} % multiple columns
+% column separation
+\setlength{\columnsep}{1cm}
+% reduce padding around
+\setlength{\multicolsep}{0em}
+
+% handle fonts encoding.
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% include color definitions
+\usepackage{xcolor}
+\input{colors.tex}
+
+% icons
+\usepackage{fontawesome5}
+\usepackage{academicons}
+\usepackage[sorting=ydnt,maxbibnames=99,isbn=false]{biblatex}
+\addbibresource{papers_all.bib}
+
+\renewcommand*{\mkbibnamefamily}[1]{
+\ifitemannotation{highlight}
+  {\textbf{#1}}
+  {#1}%
+\ifitemannotation{first}
+  {\textsuperscript{*}}
+  {}%
+\ifitemannotation{corresponding}
+  {$^\dagger$}
+  {}%
+}%%
+
+% custom section titles
+\newcommand\sect[1]{\section*{#1}}
+\newcommand\ssect[1]{\subsection*{#1}}
+
+\usepackage{titlesec} % Allows creating custom \section's
+\usepackage{tabularx} % Advanced table configurations
+
+\titleformat{\section}{\Large\scshape}{}{0em}{}[\titlerule] % Section formatting
+\titlespacing{\section}{0em}{2.1em}{.8em}
+
+\usepackage[pdftitle={Filip Úradník -- Publications},bookmarks=false,colorlinks=true,allcolors=HueColor]{hyperref}
+
+\begin{document}
+
+\nocite{*}
+\renewcommand{\refname}{Filip Úradník -- Publications}
+\defbibnote{mynote}{$^*$ indicates equal contribution.}
+\printbibliography[prenote=mynote]
+
+\end{document}
+

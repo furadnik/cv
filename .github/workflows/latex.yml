@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '0 3 * * 5'
+    - cron: "0 3 * * 5"
 
 jobs:
   build_latex:
@@ -24,7 +24,7 @@ jobs:
           sudo apt install -y texlive texlive-lang-czechslovak texlive-science texlive-latex-extra git make texlive-fonts-extra biber
           make -B
       - name: Rename
-        run: mv main_en.pdf uradnik_cv_en.pdf && mv main_cz.pdf uradnik_cv_cz.pdf && cp uradnik_cv_en.pdf uradnik_cv.pdf
+        run: mv main_en.pdf uradnik_cv_en.pdf && mv main_cz.pdf uradnik_cv_cz.pdf && cp uradnik_cv_en.pdf uradnik_cv.pdf && mv main_publications.pdf uradnik_publications.pdf
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -35,4 +35,4 @@ jobs:
             uradnik_cv.pdf
             uradnik_cv_en.pdf
             uradnik_cv_cz.pdf
-
+            uradnik_publications.pdf
